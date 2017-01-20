@@ -10,20 +10,21 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Timer;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class LibGDXDOSGame extends ApplicationAdapter {
+    public static final int VIRTUAL_WIDTH = 640;
+    public static final int VIRTUAL_HEIGHT = 400;
+
     private Skin skin;
     private Stage stage;
 
     @Override
     public void create() {
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
-        stage = new Stage(new ScreenViewport());
+        stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
 
         final TextButton button = new TextButton("Click Me", skin, "default");
-        button.setWidth(200);
-        button.setHeight(50);
 
         final Dialog dialog = new Dialog("Click Message", skin);
 
@@ -52,4 +53,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         stage.draw();
     }
 
+    @Override
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height);
+    }
 }
