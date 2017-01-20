@@ -1,12 +1,13 @@
 {
 	com.badlogic.gdx.graphics.Color: {
         white: { r: 1, g: 1, b: 1, a: 1 },
-        red: { r: 1, g: 0, b: 0, a: 1 },
-        yellow: { r: 0.5, g: 0.5, b: 0, a: 1 }
+        lightgrey: { r: 0.66, g: 0.66, b: 0.66, a: 1 },
+        darkgrey: { r: 0.33, g: 0.33, b: 0.33, a: 1 },
+        black: { r: 0, g: 0, b: 0, a: 1 },
     },
 	com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: PxPlus_IBM_VGA_8x16.fnt } },
 	com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
-    	default: { down: button, up: button, font: default-font, fontColor: white },
+    	default: { down: button, up: button, font: default-font, fontColor: black },
     	toggle: { down: button, up: button, checked: button, font: default-font, },
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
