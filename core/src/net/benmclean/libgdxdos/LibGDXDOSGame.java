@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -26,8 +27,10 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         final TextButton button = new TextButton("Click Me", skin, "default");
 
-        final Dialog dialog = new Dialog("Click Message", skin);
+        final Dialog dialog = new Dialog("", skin);
 
+        dialog.add(new Label("Message", skin));
+        
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
