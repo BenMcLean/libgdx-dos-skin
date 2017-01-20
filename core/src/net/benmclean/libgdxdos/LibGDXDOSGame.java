@@ -30,7 +30,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final Dialog dialog = new Dialog("", skin);
 
         dialog.add(new Label("Message", skin));
-        
+
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

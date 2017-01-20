@@ -16166,9 +16166,9 @@ U6d,com.google.gwt.lang.ClassLiteralHolder::Ljavaemul_internal_EmulatedCharset$L
 V6d,com.google.gwt.lang.ClassLiteralHolder::Ljavaemul_internal_EmulatedCharset$UtfCharset_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljavaemul_internal_EmulatedCharset$UtfCharset_2_classLit,com/google/gwt/emul/javaemul/internal/EmulatedCharset.java,56,-1
 W6d,com.google.gwt.lang.ClassLiteralHolder::Ljavaemul_internal_EmulatedCharset_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljavaemul_internal_EmulatedCharset_2_classLit,com/google/gwt/emul/javaemul/internal/EmulatedCharset.java,23,-1
 X6d,com.google.gwt.lang.ClassLiteralHolder::Ljsinterop_annotations_JsType_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljsinterop_annotations_JsType_2_classLit,jsinterop/annotations/JsType.java,63,-1
-Y6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame$1$1_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,35,-1
-Z6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame$1_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,31,-1
-$6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,15,-1
+Y6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame$1$1_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,38,-1
+Z6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame$1_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,34,-1
+$6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_LibGDXDOSGame_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_LibGDXDOSGame_2_classLit,net/benmclean/libgdxdos/LibGDXDOSGame.java,16,-1
 _6d,com.google.gwt.lang.ClassLiteralHolder::Lnet_benmclean_libgdxdos_client_HtmlLauncher_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_benmclean_libgdxdos_client_HtmlLauncher_2_classLit,net/benmclean/libgdxdos/client/HtmlLauncher.java,8,-1
 a7d,com.google.gwt.lang.ClassLiteralHolder::Lnet_dermetfan_utils_Pair_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lnet_dermetfan_utils_Pair_2_classLit,net/dermetfan/utils/Pair.java,20,-1
 b7d,com.google.gwt.lang.ClassLiteralHolder::S_classLit,com.google.gwt.lang.ClassLiteralHolder,S_classLit,Unknown,0,-1
@@ -17811,22 +17811,22 @@ Ore,javaemul.internal.StringHashCache::count,javaemul.internal.StringHashCache,c
 Pre,javaemul.internal.StringHashCache::front,javaemul.internal.StringHashCache,front,com/google/gwt/emul/javaemul/internal/StringHashCache.java,35,-1
 Sre,javaemul.internal.StringHashCache::getHashCode(Ljava/lang/String;)I,javaemul.internal.StringHashCache,getHashCode,com/google/gwt/emul/javaemul/internal/StringHashCache.java,41,0
 Tre,javaemul.internal.StringHashCache::increment()V,javaemul.internal.StringHashCache,increment,com/google/gwt/emul/javaemul/internal/StringHashCache.java,89,0
-LibGDXDOSGame,,net.benmclean.libgdxdos.LibGDXDOSGame,,net/benmclean/libgdxdos/LibGDXDOSGame.java,15,-1
-Ure,net.benmclean.libgdxdos.LibGDXDOSGame::$create(Lnet/benmclean/libgdxdos/LibGDXDOSGame;)V,net.benmclean.libgdxdos.LibGDXDOSGame,$create,net/benmclean/libgdxdos/LibGDXDOSGame.java,23,0
-Vre,net.benmclean.libgdxdos.LibGDXDOSGame::$render(Lnet/benmclean/libgdxdos/LibGDXDOSGame;)V,net.benmclean.libgdxdos.LibGDXDOSGame,$render,net/benmclean/libgdxdos/LibGDXDOSGame.java,49,0
-Wre,net.benmclean.libgdxdos.LibGDXDOSGame::$resize(Lnet/benmclean/libgdxdos/LibGDXDOSGame;II)V,net.benmclean.libgdxdos.LibGDXDOSGame,$resize,net/benmclean/libgdxdos/LibGDXDOSGame.java,57,0
-Xre,net.benmclean.libgdxdos.LibGDXDOSGame::LibGDXDOSGame() <init>,net.benmclean.libgdxdos.LibGDXDOSGame,LibGDXDOSGame,net/benmclean/libgdxdos/LibGDXDOSGame.java,15,0
-a,net.benmclean.libgdxdos.LibGDXDOSGame::skin,net.benmclean.libgdxdos.LibGDXDOSGame,skin,net/benmclean/libgdxdos/LibGDXDOSGame.java,19,-1
-b,net.benmclean.libgdxdos.LibGDXDOSGame::stage,net.benmclean.libgdxdos.LibGDXDOSGame,stage,net/benmclean/libgdxdos/LibGDXDOSGame.java,20,-1
-LibGDXDOSGame$1,,net.benmclean.libgdxdos.LibGDXDOSGame$1,,net/benmclean/libgdxdos/LibGDXDOSGame.java,31,-1
-Yre,net.benmclean.libgdxdos.LibGDXDOSGame$1::LibGDXDOSGame$1(Lnet/benmclean/libgdxdos/LibGDXDOSGame;) <init>,net.benmclean.libgdxdos.LibGDXDOSGame$1,LibGDXDOSGame$1,net/benmclean/libgdxdos/LibGDXDOSGame.java,31,0
-Zre,net.benmclean.libgdxdos.LibGDXDOSGame$1::clicked(Lcom/badlogic/gdx/scenes/scene2d/InputEvent;FF)V,net.benmclean.libgdxdos.LibGDXDOSGame$1,clicked,net/benmclean/libgdxdos/LibGDXDOSGame.java,33,0
-a,net.benmclean.libgdxdos.LibGDXDOSGame$1::this$01,net.benmclean.libgdxdos.LibGDXDOSGame$1,this$01,net/benmclean/libgdxdos/LibGDXDOSGame.java,31,-1
-b,net.benmclean.libgdxdos.LibGDXDOSGame$1::val$dialog2,net.benmclean.libgdxdos.LibGDXDOSGame$1,val$dialog2,net/benmclean/libgdxdos/LibGDXDOSGame.java,31,-1
-LibGDXDOSGame$1$1,,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,,net/benmclean/libgdxdos/LibGDXDOSGame.java,35,-1
-$re,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::LibGDXDOSGame$1$1(Lnet/benmclean/libgdxdos/LibGDXDOSGame$1;) <init>,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,LibGDXDOSGame$1$1,net/benmclean/libgdxdos/LibGDXDOSGame.java,35,0
-_re,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::run()V,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,run,net/benmclean/libgdxdos/LibGDXDOSGame.java,37,0
-a,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::val$dialog2,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,val$dialog2,net/benmclean/libgdxdos/LibGDXDOSGame.java,35,-1
+LibGDXDOSGame,,net.benmclean.libgdxdos.LibGDXDOSGame,,net/benmclean/libgdxdos/LibGDXDOSGame.java,16,-1
+Ure,net.benmclean.libgdxdos.LibGDXDOSGame::$create(Lnet/benmclean/libgdxdos/LibGDXDOSGame;)V,net.benmclean.libgdxdos.LibGDXDOSGame,$create,net/benmclean/libgdxdos/LibGDXDOSGame.java,24,0
+Vre,net.benmclean.libgdxdos.LibGDXDOSGame::$render(Lnet/benmclean/libgdxdos/LibGDXDOSGame;)V,net.benmclean.libgdxdos.LibGDXDOSGame,$render,net/benmclean/libgdxdos/LibGDXDOSGame.java,52,0
+Wre,net.benmclean.libgdxdos.LibGDXDOSGame::$resize(Lnet/benmclean/libgdxdos/LibGDXDOSGame;II)V,net.benmclean.libgdxdos.LibGDXDOSGame,$resize,net/benmclean/libgdxdos/LibGDXDOSGame.java,60,0
+Xre,net.benmclean.libgdxdos.LibGDXDOSGame::LibGDXDOSGame() <init>,net.benmclean.libgdxdos.LibGDXDOSGame,LibGDXDOSGame,net/benmclean/libgdxdos/LibGDXDOSGame.java,16,0
+a,net.benmclean.libgdxdos.LibGDXDOSGame::skin,net.benmclean.libgdxdos.LibGDXDOSGame,skin,net/benmclean/libgdxdos/LibGDXDOSGame.java,20,-1
+b,net.benmclean.libgdxdos.LibGDXDOSGame::stage,net.benmclean.libgdxdos.LibGDXDOSGame,stage,net/benmclean/libgdxdos/LibGDXDOSGame.java,21,-1
+LibGDXDOSGame$1,,net.benmclean.libgdxdos.LibGDXDOSGame$1,,net/benmclean/libgdxdos/LibGDXDOSGame.java,34,-1
+Yre,net.benmclean.libgdxdos.LibGDXDOSGame$1::LibGDXDOSGame$1(Lnet/benmclean/libgdxdos/LibGDXDOSGame;) <init>,net.benmclean.libgdxdos.LibGDXDOSGame$1,LibGDXDOSGame$1,net/benmclean/libgdxdos/LibGDXDOSGame.java,34,0
+Zre,net.benmclean.libgdxdos.LibGDXDOSGame$1::clicked(Lcom/badlogic/gdx/scenes/scene2d/InputEvent;FF)V,net.benmclean.libgdxdos.LibGDXDOSGame$1,clicked,net/benmclean/libgdxdos/LibGDXDOSGame.java,36,0
+a,net.benmclean.libgdxdos.LibGDXDOSGame$1::this$01,net.benmclean.libgdxdos.LibGDXDOSGame$1,this$01,net/benmclean/libgdxdos/LibGDXDOSGame.java,34,-1
+b,net.benmclean.libgdxdos.LibGDXDOSGame$1::val$dialog2,net.benmclean.libgdxdos.LibGDXDOSGame$1,val$dialog2,net/benmclean/libgdxdos/LibGDXDOSGame.java,34,-1
+LibGDXDOSGame$1$1,,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,,net/benmclean/libgdxdos/LibGDXDOSGame.java,38,-1
+$re,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::LibGDXDOSGame$1$1(Lnet/benmclean/libgdxdos/LibGDXDOSGame$1;) <init>,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,LibGDXDOSGame$1$1,net/benmclean/libgdxdos/LibGDXDOSGame.java,38,0
+_re,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::run()V,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,run,net/benmclean/libgdxdos/LibGDXDOSGame.java,40,0
+a,net.benmclean.libgdxdos.LibGDXDOSGame$1$1::val$dialog2,net.benmclean.libgdxdos.LibGDXDOSGame$1$1,val$dialog2,net/benmclean/libgdxdos/LibGDXDOSGame.java,38,-1
 HtmlLauncher,,net.benmclean.libgdxdos.client.HtmlLauncher,,net/benmclean/libgdxdos/client/HtmlLauncher.java,8,-1
 ase,net.benmclean.libgdxdos.client.HtmlLauncher::HtmlLauncher() <init>,net.benmclean.libgdxdos.client.HtmlLauncher,HtmlLauncher,net/benmclean/libgdxdos/client/HtmlLauncher.java,8,0
 Pair,,net.dermetfan.utils.Pair,,net/dermetfan/utils/Pair.java,20,-1
