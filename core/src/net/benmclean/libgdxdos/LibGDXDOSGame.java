@@ -3,6 +3,7 @@ package net.benmclean.libgdxdos;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
@@ -19,11 +20,22 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
     private Skin skin;
     private Stage stage;
+    protected ShaderProgram shader;
+    protected Palette4 uiPalette;
 
     @Override
     public void create() {
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
+        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShader);
+//        uiPalette = new Palette4(
+//                0, 255, 0, 255,
+//                85, 255, 85, 255,
+//                170, 255, 170, 255,
+//                255, 255, 255, 255
+//        );
+
+        uiPalette = Palette4.gameboy();
 
         final TextButton button = new TextButton("Click Me", skin, "default");
 
@@ -52,6 +64,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        stage.getBatch().setShader(shader);
+        uiPalette.bind(stage.getBatch().getShader());
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
     }
