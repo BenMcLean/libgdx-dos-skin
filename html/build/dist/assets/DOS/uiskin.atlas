@@ -1,14 +1,15 @@
 
 uiskin.png
-size: 64,64
+size: 256,64
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 button
   rotate: false
-  xy: 32, 32
+  xy: 128, 32
   size: 24, 23
   split: 8, 8, 7, 7
+  pad: 0, 8, 0, 7
   orig: 24, 23
   offset: 0, 0
   index: -1
@@ -16,7 +17,31 @@ window double border
   rotate: false
   xy: 0, 0
   size: 32, 55
-  split: 8, 17, 15, 24
+  split: 8, 16, 16, 23
+  orig: 32, 55
+  offset: 0, 0
+  index: -1
+window fancy border
+  rotate: false
+  xy: 32, 0
+  size: 32, 55
+  split: 8, 16, 16, 23
+  orig: 32, 55
+  offset: 0, 0
+  index: -1
+window no border
+  rotate: false
+  xy: 64, 0
+  size: 32, 55
+  split: 8, 16, 16, 23
+  orig: 32, 55
+  offset: 0, 0
+  index: -1
+window single border
+  rotate: false
+  xy: 96, 0
+  size: 32, 55
+  split: 8, 16, 16, 23
   orig: 32, 55
   offset: 0, 0
   index: -1
