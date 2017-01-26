@@ -27,17 +27,15 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     public void create() {
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
-        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShader);
-//        uiPalette = new Palette4(
-//                0, 255, 0, 255,
-//                85, 255, 85, 255,
-//                170, 255, 170, 255,
-//                255, 255, 255, 255
-//        );
+        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
+        uiPalette = new Palette4(
+                0, 0, 0, 255,
+                0, 0, 127, 255,
+                0, 0, 255, 255,
+                255, 255, 255, 255
+        );
 
-        uiPalette = Palette4.gameboy();
-
-        final TextButton button = new TextButton("Click Me", skin, "default");
+        final TextButton button = new TextButton("BUTTON", skin, "default");
 
         final Dialog dialog = new Dialog("", skin);
 
@@ -58,14 +56,17 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         stage.addActor(button);
 
         Gdx.input.setInputProcessor(stage);
+
+        stage.getBatch().setShader(shader);
+        stage.getBatch().begin();
+        uiPalette.bind(stage.getBatch().getShader());
+        stage.getBatch().end();
     }
 
     @Override
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        stage.getBatch().setShader(shader);
-        uiPalette.bind(stage.getBatch().getShader());
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
     }
