@@ -8,7 +8,7 @@ d:DOS:0:application/unknown
 t:DOS/PxPlus_IBM_VGA_8x16.fnt:87525:application/unknown
 i:DOS/PxPlus_IBM_VGA_8x16.png:4668:image/png
 t:DOS/uiskin.atlas:721:application/unknown
-t:DOS/uiskin.json:867:application/unknown
+t:DOS/uiskin.json:884:application/unknown
 i:DOS/uiskin.png:477:image/png
 d:VGA8:0:application/unknown
 t:VGA8/PxPlus_IBM_VGA_8x16.fnt:86741:application/unknown
