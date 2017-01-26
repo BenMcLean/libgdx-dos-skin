@@ -55,9 +55,7 @@ public class Palette4 implements Disposable {
             "void main() {\n" +
             "   vec4 color = texture2D(u_texture, v_texCoords).rgba;\n" + // on separate line for GWT
             "	gl_FragColor = v_color * vec4(\n" +
-            "       texture2D(u_texPalette, vec2(color.r, 0)).r, \n" +
-            "       texture2D(u_texPalette, vec2(color.r, 0)).g, \n" +
-            "       texture2D(u_texPalette, vec2(color.r, 0)).b, \n" +
+            "       texture2D(u_texPalette, vec2(color.r, 0)).rgb, \n" +
             "       color.a\n" +
             "   );\n" +
             "}";
