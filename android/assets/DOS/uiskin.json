@@ -14,6 +14,6 @@
     default: { titleFont: default-font, background: window double border, titleFontColor: white },
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
-    default: { font: default-font, fontColor: black }
+    default: { font: default-font, fontColor: darkgrey }
 	},
 }

@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class LibGDXDOSGame extends ApplicationAdapter {
@@ -23,6 +22,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     private Stage stage;
     protected ShaderProgram shader;
     protected Palette4 uiPalette;
+    public boolean applyShader=false;
+    public boolean shaderChanged=true;
 
     @Override
     public void create() {
@@ -35,7 +36,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
                 0, 0, 0, 255,
                 0, 0, 127, 255,
                 0, 0, 255, 255,
-                255, 255, 255, 255
+                170, 170, 255, 255
         );
 
         final TextButton button = new TextButton("BUTTON", skin, "default");
@@ -44,30 +45,29 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         dialog.add(new Label("Message", skin));
 
-        button.addListener(new ClickListener() {
+        dialog.show(stage);
+
+        final TextButton shaderButton = new TextButton(shaderButtonText(), skin, "default");
+        shaderButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                dialog.show(stage);
-                Timer.schedule(new Timer.Task() {
-                    @Override
-                    public void run() {
-                        dialog.hide();
-                    }
-                }, 3);
+                applyShader = !applyShader;
+                shaderButton.setText(shaderButtonText());
+                shaderButton.setSize(shaderButton.getPrefWidth(), shaderButton.getPrefHeight());
+                shaderChanged = true;
             }
         });
-        stage.addActor(button);
+        stage.addActor(shaderButton);
 
         Gdx.input.setInputProcessor(stage);
-
-        stage.getBatch().setShader(shader);
-        stage.getBatch().begin();
-        uiPalette.bind(stage.getBatch().getShader());
-        stage.getBatch().end();
     }
 
     @Override
     public void render() {
+        if (shaderChanged) {
+            shade();
+            shaderChanged = false;
+        }
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act(Gdx.graphics.getDeltaTime());
@@ -77,5 +77,24 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height);
+    }
+
+    public void shade () {
+        shade(applyShader);
+    }
+
+    public void shade (boolean applyShader) {
+        if (applyShader) {
+            stage.getBatch().setShader(shader);
+            stage.getBatch().begin();
+            uiPalette.bind(stage.getBatch().getShader());
+            stage.getBatch().end();
+        } else {
+            stage.getBatch().setShader(null);
+        }
+    }
+
+    public String shaderButtonText () {
+        return applyShader ? "Shader ON" : "Shader OFF";
     }
 }
