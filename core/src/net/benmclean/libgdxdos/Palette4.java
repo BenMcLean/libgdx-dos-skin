@@ -39,8 +39,8 @@ public class Palette4 implements Disposable {
             "uniform sampler2D u_texPalette;\n" +
             "uniform sampler2D u_texture;\n" +
             "void main() {\n" +
-            "   vec4 color = texture2D(u_texture, v_texCoords).rgba;\n" + // on separate line for GWT
-            "	gl_FragColor = v_color * texture2D(u_texPalette, vec2(color.r, 0)).rgba;\n" +
+            "   float color = texture2D(u_texture, v_texCoords).r;\n" + // on separate line for GWT
+            "	gl_FragColor = v_color * texture2D(u_texPalette, vec2(color, 0)).rgba;\n" +
             "}";
 
     public static final String fragmentShaderYieldTransparency = "#ifdef GL_ES\n" +
@@ -54,7 +54,7 @@ public class Palette4 implements Disposable {
             "uniform sampler2D u_texPalette;\n" +
             "uniform sampler2D u_texture;\n" +
             "void main() {\n" +
-            "   vec2 color = texture2D(u_texture, v_texCoords).ra;\n" + // on separate line for GWT
+            "   vec2 color = texture2D(u_texture, v_texCoords).ra;\n" +
             "	gl_FragColor = v_color * vec4(\n" +
             "       texture2D(u_texPalette, vec2(color.r, 0)).rgb, \n" +
             "       color.y\n" +
@@ -67,7 +67,7 @@ public class Palette4 implements Disposable {
     protected Palette4 makePixmap() {
         if (pixmap != null) pixmap.dispose();
         pixmap = new Pixmap(4, 1, Pixmap.Format.RGBA8888);
-        pixmap.setBlending(Pixmap.Blending.None);
+        Pixmap.setBlending(Pixmap.Blending.None);
         return this;
     }
 
