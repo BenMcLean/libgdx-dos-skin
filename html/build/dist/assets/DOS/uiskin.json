@@ -7,13 +7,13 @@
     },
 	com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: PxPlus_IBM_VGA_8x16.fnt } },
 	com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
-    	default: { down: button, up: button, font: default-font, fontColor: black },
+    	default: { down: button pressed, up: button, font: default-font, fontColor: black },
     	toggle: { down: button, up: button, checked: button, font: default-font, fontColor: black },
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
-    default: { titleFont: default-font, background: window double border, titleFontColor: black },
+    default: { titleFont: default-font, background: window double border, titleFontColor: white },
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
-    default: { font: default-font, fontColor: black }
+    default: { font: default-font, fontColor: darkgrey }
 	},
 }

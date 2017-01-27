@@ -6,10 +6,19 @@ filter: Nearest,Nearest
 repeat: none
 button
   rotate: false
-  xy: 128, 32
+  xy: 128, 9
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 0, 8, 0, 7
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+button pressed
+  rotate: false
+  xy: 128, 32
+  size: 24, 23
+  split: 8, 8, 7, 7
+  pad: 8, 0, 7, 0
   orig: 24, 23
   offset: 0, 0
   index: -1
