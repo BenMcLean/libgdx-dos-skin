@@ -10,6 +10,12 @@
       file: PxPlus_IBM_VGA_8x16.fnt
     },
   },
+  com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+    dialogDim: {
+      name: white,
+      color: {r: 0, g: 0, b: 0, a: 0.45}
+    },
+  },
   com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
     default: {
       down: button-pressed,
@@ -35,6 +41,15 @@
       font: default-font,
       fontColor: black,
     },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
+    default: {
+      vScroll: scroll-v,
+      hScrollKnob: darkgrey,
+      background: lightgrey,
+      hScroll: scroll-h,
+      vScrollKnob: darkgrey,
+    }
   },
   com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
     default: {
