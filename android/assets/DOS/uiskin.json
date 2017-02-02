@@ -1,19 +1,52 @@
 {
-	com.badlogic.gdx.graphics.Color: {
-        white: { r: 1, g: 1, b: 1, a: 1 },
-        lightgrey: { r: 0.66, g: 0.66, b: 0.66, a: 1 },
-        darkgrey: { r: 0.33, g: 0.33, b: 0.33, a: 1 },
-        black: { r: 0, g: 0, b: 0, a: 1 },
+  com.badlogic.gdx.graphics.Color: {
+    white: {r: 1, g: 1, b: 1, a: 1},
+    lightgrey: {r: 0.66, g: 0.66, b: 0.66, a: 1},
+    darkgrey: {r: 0.33, g: 0.33, b: 0.33, a: 1},
+    black: {r: 0, g: 0, b: 0, a: 1},
+  },
+  com.badlogic.gdx.graphics.g2d.BitmapFont: {
+    default-font: {
+      file: PxPlus_IBM_VGA_8x16.fnt
     },
-	com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: PxPlus_IBM_VGA_8x16.fnt } },
-	com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
-    	default: { down: button pressed, up: button, font: default-font, fontColor: black },
-    	toggle: { down: button, up: button, checked: button, font: default-font, fontColor: black },
-	},
-	com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
-    default: { titleFont: default-font, background: window double border, titleFontColor: white },
-	},
-	com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
-    default: { font: default-font, fontColor: darkgrey }
-	},
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+    default: {
+      down: button-pressed,
+      up: button,
+    },
+    toggle: {
+      down: button-pressed,
+      checked: button-pressed,
+      up: button,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+    default: {
+      down: button-pressed,
+      up: button,
+      font: default-font,
+      fontColor: black,
+    },
+    toggle: {
+      down: button,
+      up: button,
+      checked: button,
+      font: default-font,
+      fontColor: black,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
+    default: {
+      titleFont: default-font,
+      background: window-double-border,
+      titleFontColor: white,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+    default: {
+      font: default-font,
+      fontColor: darkgrey,
+    },
+  },
 }
