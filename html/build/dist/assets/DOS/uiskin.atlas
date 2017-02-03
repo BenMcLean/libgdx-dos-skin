@@ -4,51 +4,128 @@ size: 256,64
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+black
+  rotate: false
+  xy: 0, 8
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
 button
   rotate: false
-  xy: 128, 9
+  xy: 177, 41
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 0, 8, 0, 7
   orig: 24, 23
   offset: 0, 0
   index: -1
-button pressed
+button-pressed
   rotate: false
-  xy: 128, 32
+  xy: 145, 25
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 8, 0, 7, 0
   orig: 24, 23
   offset: 0, 0
   index: -1
-window double border
+checked
   rotate: false
-  xy: 0, 0
+  xy: 128, 0
+  size: 32, 16
+  split: 24, 0, 15, 0
+  pad: 24, 0, 0, 0
+  orig: 32, 16
+  offset: 0, 0
+  index: -1
+darkgrey
+  rotate: false
+  xy: 145, 24
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+lightgrey
+  rotate: false
+  xy: 169, 47
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+scroll-h
+  rotate: false
+  xy: 201, 48
+  size: 24, 16
+  split: 8, 8, 0, 16
+  pad: 8, 8, -1, -1
+  orig: 24, 16
+  offset: 0, 0
+  index: -1
+scroll-v
+  rotate: false
+  xy: 137, 16
+  size: 8, 48
+  split: 0, 8, 16, 16
+  pad: -1, -1, 16, 16
+  orig: 8, 48
+  offset: 0, 0
+  index: -1
+select-box
+  rotate: false
+  xy: 128, 16
+  size: 9, 48
+  split: 0, 8, 16, 16
+  pad: 0, 8, 0, 0
+  orig: 9, 48
+  offset: 0, 0
+  index: -1
+unchecked
+  rotate: false
+  xy: 145, 48
+  size: 32, 16
+  split: 24, 0, 15, 0
+  pad: 24, 0, 0, 0
+  orig: 32, 16
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 201, 47
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+window-double-border
+  rotate: false
+  xy: 0, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
   offset: 0, 0
   index: -1
-window fancy border
+window-fancy-border
   rotate: false
-  xy: 32, 0
+  xy: 32, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
   offset: 0, 0
   index: -1
-window no border
+window-no-border
   rotate: false
-  xy: 64, 0
+  xy: 64, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
   offset: 0, 0
   index: -1
-window single border
+window-single-border
   rotate: false
-  xy: 96, 0
+  xy: 96, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
