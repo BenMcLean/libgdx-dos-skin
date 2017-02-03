@@ -6,10 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -22,8 +19,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     private Stage stage;
     protected ShaderProgram shader;
     protected Palette4 uiPalette;
-    public boolean applyShader=false;
-    public boolean shaderChanged=true;
+    public boolean applyShader = false;
+    public boolean shaderChanged = true;
 
     @Override
     public void create() {
@@ -39,25 +36,33 @@ public class LibGDXDOSGame extends ApplicationAdapter {
                 170, 170, 255, 255
         );
 
-        final TextButton button = new TextButton("BUTTON", skin, "default");
+        final VerticalGroup group = new VerticalGroup();
+        group.space(16);
+        group.addActor(new Label("Label", skin));
 
-        final Dialog dialog = new Dialog("", skin);
+        final TextButton shaderButton = new TextButton("TextButton", skin, "default");
 
-        dialog.add(new Label("Message", skin));
+        group.addActor(shaderButton);
 
-        dialog.show(stage);
+        final CheckBox checkBox = new CheckBox("Apply Shader", skin);
+        checkBox.setChecked(applyShader);
 
-        final TextButton shaderButton = new TextButton(shaderButtonText(), skin, "default");
-        shaderButton.addListener(new ClickListener() {
+        checkBox.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                applyShader = !applyShader;
-                shaderButton.setText(shaderButtonText());
-                shaderButton.setSize(shaderButton.getPrefWidth(), shaderButton.getPrefHeight());
+                applyShader = checkBox.isChecked();
                 shaderChanged = true;
             }
         });
-        stage.addActor(shaderButton);
+
+        group.addActor(checkBox);
+
+        final Window window = new Window("", skin);
+        window.add(group);
+
+        window.setSize(window.getPrefWidth(), window.getPrefHeight());
+
+        stage.addActor(window);
 
         Gdx.input.setInputProcessor(stage);
     }
@@ -79,11 +84,11 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         stage.getViewport().update(width, height);
     }
 
-    public void shade () {
+    public void shade() {
         shade(applyShader);
     }
 
-    public void shade (boolean applyShader) {
+    public void shade(boolean applyShader) {
         if (applyShader) {
             stage.getBatch().setShader(shader);
             stage.getBatch().begin();
@@ -92,9 +97,5 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         } else {
             stage.getBatch().setShader(null);
         }
-    }
-
-    public String shaderButtonText () {
-        return applyShader ? "Shader ON" : "Shader OFF";
     }
 }
