@@ -14,7 +14,7 @@ black
   index: -1
 button
   rotate: false
-  xy: 177, 41
+  xy: 225, 41
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 0, 8, 0, 7
@@ -23,7 +23,7 @@ button
   index: -1
 button-pressed
   rotate: false
-  xy: 145, 25
+  xy: 193, 25
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 8, 0, 7, 0
@@ -32,7 +32,7 @@ button-pressed
   index: -1
 checked
   rotate: false
-  xy: 128, 0
+  xy: 176, 0
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -41,7 +41,7 @@ checked
   index: -1
 darkgrey
   rotate: false
-  xy: 145, 24
+  xy: 193, 24
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -49,7 +49,7 @@ darkgrey
   index: -1
 lightgrey
   rotate: false
-  xy: 169, 47
+  xy: 249, 63
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -57,7 +57,7 @@ lightgrey
   index: -1
 scroll-h
   rotate: false
-  xy: 201, 48
+  xy: 217, 25
   size: 24, 16
   split: 8, 8, 0, 16
   pad: 8, 8, -1, -1
@@ -66,7 +66,7 @@ scroll-h
   index: -1
 scroll-v
   rotate: false
-  xy: 137, 16
+  xy: 185, 16
   size: 8, 48
   split: 0, 8, 16, 16
   pad: -1, -1, 16, 16
@@ -75,7 +75,7 @@ scroll-v
   index: -1
 select-box
   rotate: false
-  xy: 128, 16
+  xy: 176, 16
   size: 9, 48
   split: 0, 8, 16, 16
   pad: 0, 8, 0, 0
@@ -84,7 +84,7 @@ select-box
   index: -1
 unchecked
   rotate: false
-  xy: 145, 48
+  xy: 193, 48
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -93,7 +93,7 @@ unchecked
   index: -1
 white
   rotate: false
-  xy: 201, 47
+  xy: 241, 40
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -101,7 +101,7 @@ white
   index: -1
 window-double-border
   rotate: false
-  xy: 0, 9
+  xy: 48, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -109,7 +109,7 @@ window-double-border
   index: -1
 window-fancy-border
   rotate: false
-  xy: 32, 9
+  xy: 80, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -117,7 +117,7 @@ window-fancy-border
   index: -1
 window-no-border
   rotate: false
-  xy: 64, 9
+  xy: 112, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -125,9 +125,18 @@ window-no-border
   index: -1
 window-single-border
   rotate: false
-  xy: 96, 9
+  xy: 144, 9
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
+  offset: 0, 0
+  index: -1
+window-thick-border
+  rotate: false
+  xy: 0, 9
+  size: 48, 55
+  split: 8, 16, 7, 16
+  pad: 16, 24, 16, 23
+  orig: 48, 55
   offset: 0, 0
   index: -1

@@ -54,7 +54,7 @@
   com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
     default: {
       titleFont: default-font,
-      background: window-double-border,
+      background: window-thick-border,
       titleFontColor: white,
     },
   },
