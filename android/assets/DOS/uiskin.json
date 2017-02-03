@@ -55,13 +55,13 @@
     default: {
       titleFont: default-font,
       background: window-double-border,
-      titleFontColor: black,
+      titleFontColor: white,
     },
   },
   com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
     default: {
       font: default-font,
-      fontColor: black,
+      fontColor: white,
     },
   },
   com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle: {
@@ -69,7 +69,7 @@
       checkboxOn: checked,
       checkboxOff: unchecked,
       font: default-font,
-      fontColor: white
+      fontColor: black
     }
   },
 }

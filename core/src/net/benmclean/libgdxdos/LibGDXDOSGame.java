@@ -29,12 +29,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
         if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
 
-        uiPalette = new Palette4(
-                0, 0, 0, 255,
-                0, 0, 127, 255,
-                0, 0, 255, 255,
-                170, 170, 255, 255
-        );
+        uiPalette = Palette4.greenUI();
 
         final VerticalGroup group = new VerticalGroup();
         group.space(16);

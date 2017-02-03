@@ -226,6 +226,24 @@ public class Palette4 implements Disposable {
         );
     }
 
+    public static Palette4 blueUI() {
+        return new Palette4(
+                0, 0, 0, 255,
+                0, 0, 127, 255,
+                0, 0, 255, 255,
+                170, 170, 255, 255
+        );
+    }
+
+    public static Palette4 greenUI() {
+        return new Palette4(
+                0, 0, 0, 255,
+                0, 62, 0, 255,
+                0, 127, 0, 255,
+                0, 255, 0, 255
+        );
+    }
+
     public Palette4 bind(ShaderProgram shader) {
         return bind(this, shader);
     }
