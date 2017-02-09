@@ -20,8 +20,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     private Stage stage;
     protected ShaderProgram shader;
     protected Palette4 uiPalette;
-    public boolean applyShader = false;
-    public boolean shaderChanged = true;
+    private boolean applyShader = false;
+    private boolean shaderChanged = true;
 
     @Override
     public void create() {
@@ -50,8 +50,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         checkBox.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                applyShader = checkBox.isChecked();
-                shaderChanged = true;
+                setShader(checkBox.isChecked());
             }
         });
         group.addActor(checkBox);
@@ -79,6 +78,11 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height);
+    }
+
+    public void setShader (boolean applyShader) {
+        shaderChanged = true;
+        this.applyShader = applyShader;
     }
 
     public void shade() {
