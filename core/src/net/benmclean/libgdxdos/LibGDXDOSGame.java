@@ -16,6 +16,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     public static final int VIRTUAL_HEIGHT = 480;
 
     private Skin skin;
+    private Skin defaultSkin;
     private Stage stage;
     protected ShaderProgram shader;
     protected Palette4 uiPalette;
@@ -25,6 +26,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     @Override
     public void create() {
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
+        defaultSkin = skin = new Skin(Gdx.files.internal("default/uiskin.json"));
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
         shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
         if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
@@ -33,17 +35,15 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
+
         group.addActor(new Label("Label", skin));
 
-        final TextButton shaderButton = new TextButton("TextButton", skin, "default");
-
-        group.addActor(shaderButton);
-
-        SelectBox<String> selectBox = new SelectBox<String>(skin);
-
+        final SelectBox<String> selectBox = new SelectBox<String>(skin);
         selectBox.setItems("Stuff", "Things", "Nouns");
-
         group.addActor(selectBox);
+
+        final TextButton shaderButton = new TextButton("TextButton", skin, "default");
+        group.addActor(shaderButton);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
