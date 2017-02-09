@@ -51,6 +51,22 @@
       vScrollKnob: darkgrey,
     }
   },
+  com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle: {
+    default: {
+      font: default-font,
+      fontColor: black,
+      background: select-box,
+      backgroundOpen: select-box-up,
+      scrollStyle: default,
+      listStyle: {
+        font: default-font,
+        fontColorUnselected: white,
+        background: black,
+        fontColorSelected: black,
+        selection: white
+      }
+    },
+  },
   com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
     default: {
       titleFont: default-font,

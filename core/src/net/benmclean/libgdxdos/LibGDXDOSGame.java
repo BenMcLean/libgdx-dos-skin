@@ -39,6 +39,12 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         group.addActor(shaderButton);
 
+        SelectBox<String> selectBox = new SelectBox<String>(skin);
+
+        selectBox.setItems("Stuff", "Things", "Nouns");
+
+        group.addActor(selectBox);
+
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
 
