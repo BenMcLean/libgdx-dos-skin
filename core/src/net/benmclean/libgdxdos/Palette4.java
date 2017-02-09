@@ -57,7 +57,7 @@ public class Palette4 implements Disposable {
             "   vec2 color = texture2D(u_texture, v_texCoords).ra;" +
             "	gl_FragColor = vec4(\n" +
             "       texture2D(u_texPalette, vec2(v_color.r * color.r, 0)).rgb, \n" +
-            "       color.y\n" +
+            "       color.y * v_color.a\n" +
             "   );\n" +
             "}";
 
