@@ -25,13 +25,13 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
     @Override
     public void create() {
+        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
+        if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
+        uiPalette = Palette4.blueUI();
+
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
         defaultSkin = new Skin(Gdx.files.internal("default/uiskin.json"));
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
-        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
-        if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
-
-        uiPalette = Palette4.blueUI();
 
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
@@ -47,7 +47,6 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
-
         checkBox.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -55,14 +54,11 @@ public class LibGDXDOSGame extends ApplicationAdapter {
                 shaderChanged = true;
             }
         });
-
         group.addActor(checkBox);
 
         final Window window = new Window("", skin);
         window.add(group);
-
         window.setSize(window.getPrefWidth(), window.getPrefHeight());
-
         stage.addActor(window);
 
         Gdx.input.setInputProcessor(stage);
