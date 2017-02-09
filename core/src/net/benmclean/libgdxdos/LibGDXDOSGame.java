@@ -26,7 +26,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     @Override
     public void create() {
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
-        defaultSkin = skin = new Skin(Gdx.files.internal("default/uiskin.json"));
+        defaultSkin = new Skin(Gdx.files.internal("default/uiskin.json"));
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
         shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
         if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());

@@ -58,7 +58,7 @@ darkgrey
   index: -1
 lightgrey
   rotate: false
-  xy: 241, 40
+  xy: 217, 47
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -100,6 +100,24 @@ select-box-up
   orig: 16, 16
   offset: 0, 0
   index: -1
+splitpane-horizontal
+  rotate: false
+  xy: 241, 25
+  size: 8, 16
+  split: 0, 8, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
+splitpane-vertical
+  rotate: false
+  xy: 240, 9
+  size: 8, 16
+  split: 0, 8, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
 unchecked
   rotate: false
   xy: 193, 48
@@ -111,7 +129,7 @@ unchecked
   index: -1
 white
   rotate: false
-  xy: 217, 47
+  xy: 193, 24
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
