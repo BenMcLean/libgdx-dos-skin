@@ -49,7 +49,27 @@
       background: lightgrey,
       hScroll: scroll-h,
       vScrollKnob: darkgrey,
-    }
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.SelectBox$SelectBoxStyle: {
+    default: {
+      font: default-font,
+      fontColor: black,
+      background: select-box,
+      backgroundOpen: select-box-up,
+      scrollStyle: default,
+      listStyle: {
+        font: default-font,
+        fontColorUnselected: white,
+        background: black,
+        fontColorSelected: black,
+        selection: white,
+      },
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.SplitPane$SplitPaneStyle: {
+    default-vertical: { handle: splitpane-vertical },
+    default-horizontal: { handle: splitpane-horizontal },
   },
   com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
     default: {
@@ -69,7 +89,7 @@
       checkboxOn: checked,
       checkboxOff: unchecked,
       font: default-font,
-      fontColor: black
-    }
+      fontColor: black,
+    },
   },
 }
