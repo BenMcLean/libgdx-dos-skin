@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -47,9 +48,10 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final TextButton shaderButton = new TextButton("TextButton", skin, "default");
         group.addActor(shaderButton);
 
-        final TextField textField = new TextField("Hello World!",
+        final TextArea textField = new TextArea("DOS custom",
                 new TextField.TextFieldStyle(
-                        skin.getFont("default-font"),
+                        new BitmapFont(),
+                        //skin.getFont("default-font"),
                         Color.WHITE,
                         skin.getDrawable("cursor"),
                         skin.getDrawable("darkgrey"),
@@ -57,6 +59,18 @@ public class LibGDXDOSGame extends ApplicationAdapter {
                 )
         );
         group.addActor(textField);
+
+        final TextArea textField2 = new TextArea("Default skin",
+                new TextField.TextFieldStyle(
+//                        new BitmapFont(),
+                        skin.getFont("default-font"),
+                        Color.WHITE,
+                        defaultSkin.getDrawable("cursor"),
+                        defaultSkin.getDrawable("selection"),
+                        defaultSkin.getDrawable("textfield")
+                )
+                );
+        group.addActor(textField2);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
