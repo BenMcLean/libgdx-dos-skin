@@ -2,7 +2,9 @@ package net.benmclean.libgdxdos;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -31,6 +33,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
         defaultSkin = new Skin(Gdx.files.internal("default/uiskin.json"));
+
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
 
         final VerticalGroup group = new VerticalGroup();
@@ -45,8 +48,16 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final TextButton shaderButton = new TextButton("TextButton", skin, "default");
         group.addActor(shaderButton);
 
-        final TextArea textArea = new TextArea("Hello World!", skin);
-        group.addActor(textArea);
+        final TextField textField = new TextField("Hello World!",
+                new TextField.TextFieldStyle(
+                        new BitmapFont(),
+                        Color.WHITE,
+                        skin.getDrawable("cursor"),
+                        skin.getDrawable("darkgrey"),
+                        skin.getDrawable("black")
+                )
+        );
+        group.addActor(textField);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
@@ -92,7 +103,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         stage.getViewport().update(width, height);
     }
 
-    public void setShader (boolean applyShader) {
+    public void setShader(boolean applyShader) {
         shaderChanged = true;
         this.applyShader = applyShader;
     }
