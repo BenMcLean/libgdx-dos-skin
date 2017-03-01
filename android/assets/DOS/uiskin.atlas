@@ -163,6 +163,15 @@ splitpane-vertical
   orig: 8, 16
   offset: 0, 0
   index: -1
+textarea
+  rotate: false
+  xy: 97, 7
+  size: 8, 16
+  split: 7, 0, 15, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
 unchecked
   rotate: false
   xy: 73, 55
