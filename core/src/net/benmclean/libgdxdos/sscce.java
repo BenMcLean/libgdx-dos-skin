@@ -29,7 +29,7 @@ public class sscce extends ApplicationAdapter {
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
 
         Pixmap pixmap = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
-        Pixmap.setBlending(Pixmap.Blending.None);
+        pixmap.setBlending(Pixmap.Blending.None);
         pixmap.setColor(Color.BLACK);
         pixmap.drawPixel(0, 0);
         TextureRegionDrawable black = new TextureRegionDrawable(new TextureRegion(new Texture(pixmap)));
