@@ -92,10 +92,23 @@
       knob: slider-knob-vertical,
     },
   },
-  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+  com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle: {
+    default-horizontal: {
+      background: slider,
+      knob: slider-knob,
+    },
+    default-vertical: {
+      background: slider-vertical,
+      knob: slider-knob-vertical,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
     default: {
+      selection: lightgrey,
+      background: black,
       font: default-font,
       fontColor: white,
+      cursor: cursor,
     },
   },
   com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle: {
@@ -104,6 +117,12 @@
       checkboxOff: unchecked,
       font: default-font,
       fontColor: black,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+    default: {
+      font: default-font,
+      fontColor: white,
     },
   },
 }
