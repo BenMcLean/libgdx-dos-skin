@@ -1,14 +1,14 @@
 {
+  com.badlogic.gdx.graphics.g2d.BitmapFont: {
+    default-font: {
+      file: PxPlus_IBM_VGA_8x16.fnt
+    },
+  },
   com.badlogic.gdx.graphics.Color: {
     white: {r: 1, g: 1, b: 1, a: 1},
     lightgrey: {r: 0.66, g: 0.66, b: 0.66, a: 1},
     darkgrey: {r: 0.33, g: 0.33, b: 0.33, a: 1},
     black: {r: 0, g: 0, b: 0, a: 1},
-  },
-  com.badlogic.gdx.graphics.g2d.BitmapFont: {
-    default-font: {
-      file: PxPlus_IBM_VGA_8x16.fnt
-    },
   },
   com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
     dialogDim: {
@@ -68,14 +68,28 @@
     },
   },
   com.badlogic.gdx.scenes.scene2d.ui.SplitPane$SplitPaneStyle: {
-    default-vertical: { handle: splitpane-vertical },
-    default-horizontal: { handle: splitpane-horizontal },
+    default-vertical: {
+      handle: splitpane-vertical
+    },
+    default-horizontal: {
+      handle: splitpane-horizontal
+    },
   },
   com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle: {
     default: {
       titleFont: default-font,
       background: window-thick-border,
       titleFontColor: white,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
+    default-horizontal: {
+      background: slider,
+      knob: slider-knob,
+    },
+    default-vertical: {
+      background: slider-vertical,
+      knob: slider-knob-vertical,
     },
   },
   com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {

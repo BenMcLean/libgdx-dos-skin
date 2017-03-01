@@ -45,6 +45,10 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final TextButton shaderButton = new TextButton("TextButton", skin, "default");
         group.addActor(shaderButton);
 
+        final ProgressBar progressBar = new ProgressBar(0f, 1f, 0.01f, true, skin);
+        progressBar.setValue(0.5f);
+        group.addActor(progressBar);
+
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
         checkBox.addListener(new ClickListener() {
