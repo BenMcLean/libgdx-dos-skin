@@ -1,12 +1,12 @@
 
 uiskin.png
-size: 256,64
+size: 128,128
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 black
   rotate: false
-  xy: 0, 8
+  xy: 72, 22
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -14,7 +14,7 @@ black
   index: -1
 button
   rotate: false
-  xy: 225, 41
+  xy: 73, 9
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 0, 8, 0, 7
@@ -23,7 +23,7 @@ button
   index: -1
 button-pressed
   rotate: false
-  xy: 193, 25
+  xy: 73, 32
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 8, 0, 7, 0
@@ -32,7 +32,7 @@ button-pressed
   index: -1
 checked
   rotate: false
-  xy: 176, 0
+  xy: 0, 0
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -41,16 +41,25 @@ checked
   index: -1
 combo-box
   rotate: false
-  xy: 176, 16
+  xy: 64, 23
   size: 9, 48
   split: 0, 8, 16, 16
   pad: 0, 8, 0, 0
   orig: 9, 48
   offset: 0, 0
   index: -1
+cursor
+  rotate: false
+  xy: 120, 110
+  size: 8, 16
+  split: 0, 0, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
 darkgrey
   rotate: false
-  xy: 249, 63
+  xy: 72, 21
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -58,7 +67,7 @@ darkgrey
   index: -1
 lightgrey
   rotate: false
-  xy: 217, 47
+  xy: 72, 20
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -66,7 +75,7 @@ lightgrey
   index: -1
 scroll-h
   rotate: false
-  xy: 217, 25
+  xy: 32, 0
   size: 24, 16
   split: 8, 8, 0, 16
   pad: 8, 8, -1, -1
@@ -75,7 +84,7 @@ scroll-h
   index: -1
 scroll-v
   rotate: false
-  xy: 185, 16
+  xy: 112, 78
   size: 8, 48
   split: 0, 8, 16, 16
   pad: -1, -1, 16, 16
@@ -84,7 +93,7 @@ scroll-v
   index: -1
 select-box
   rotate: false
-  xy: 224, 9
+  xy: 97, 39
   size: 16, 16
   split: 0, 8, 15, 0
   pad: 0, 8, 0, 0
@@ -93,16 +102,52 @@ select-box
   index: -1
 select-box-up
   rotate: false
-  xy: 208, 9
+  xy: 112, 62
   size: 16, 16
   split: 0, 8, 15, 0
   pad: 0, 8, 0, 0
   orig: 16, 16
   offset: 0, 0
   index: -1
+slider
+  rotate: false
+  xy: 64, 7
+  size: 8, 16
+  split: 0, 0, 0, 16
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
+slider-knob
+  rotate: false
+  xy: 120, 78
+  size: 8, 16
+  split: 0, 0, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
+slider-knob-vertical
+  rotate: false
+  xy: 120, 94
+  size: 8, 16
+  split: 0, 0, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
+slider-vertical
+  rotate: false
+  xy: 56, 0
+  size: 8, 16
+  split: 0, 8, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
 splitpane-horizontal
   rotate: false
-  xy: 241, 25
+  xy: 97, 23
   size: 8, 16
   split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
@@ -111,16 +156,25 @@ splitpane-horizontal
   index: -1
 splitpane-vertical
   rotate: false
-  xy: 240, 9
+  xy: 105, 23
   size: 8, 16
   split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
   orig: 8, 16
   offset: 0, 0
   index: -1
+textarea
+  rotate: false
+  xy: 97, 7
+  size: 8, 16
+  split: 7, 0, 15, 0
+  pad: 0, 0, 0, 0
+  orig: 8, 16
+  offset: 0, 0
+  index: -1
 unchecked
   rotate: false
-  xy: 193, 48
+  xy: 73, 55
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -129,7 +183,7 @@ unchecked
   index: -1
 white
   rotate: false
-  xy: 193, 24
+  xy: 72, 19
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -137,7 +191,7 @@ white
   index: -1
 window-double-border
   rotate: false
-  xy: 48, 9
+  xy: 0, 16
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -145,7 +199,7 @@ window-double-border
   index: -1
 window-fancy-border
   rotate: false
-  xy: 80, 9
+  xy: 48, 71
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -153,7 +207,7 @@ window-fancy-border
   index: -1
 window-no-border
   rotate: false
-  xy: 112, 9
+  xy: 32, 16
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -161,7 +215,7 @@ window-no-border
   index: -1
 window-single-border
   rotate: false
-  xy: 144, 9
+  xy: 80, 71
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -169,7 +223,7 @@ window-single-border
   index: -1
 window-thick-border
   rotate: false
-  xy: 0, 9
+  xy: 0, 71
   size: 48, 55
   split: 8, 16, 7, 16
   pad: 16, 24, 16, 23
