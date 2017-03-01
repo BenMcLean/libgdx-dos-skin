@@ -4,7 +4,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -50,7 +49,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         final TextField textField = new TextField("Hello World!",
                 new TextField.TextFieldStyle(
-                        new BitmapFont(),
+                        skin.getFont("default-font"),
                         Color.WHITE,
                         skin.getDrawable("cursor"),
                         skin.getDrawable("darkgrey"),
