@@ -58,6 +58,15 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         });
         group.addActor(checkBox);
 
+        final CheckBox debugCheckBox = new CheckBox("Enable Debug Rendering", skin);
+        debugCheckBox.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                stage.setDebugAll(debugCheckBox.isChecked());
+            }
+        });
+        group.addActor(debugCheckBox);
+
         final Window window = new Window("", skin);
         window.add(group);
         window.setSize(window.getPrefWidth(), window.getPrefHeight());
