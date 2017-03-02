@@ -2,9 +2,7 @@ package net.benmclean.libgdxdos;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -48,29 +46,14 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final TextButton shaderButton = new TextButton("TextButton", skin, "default");
         group.addActor(shaderButton);
 
-        final TextArea textField = new TextArea("DOS custom",
-                new TextField.TextFieldStyle(
-                        new BitmapFont(),
-                        //skin.getFont("default-font"),
-                        Color.WHITE,
-                        skin.getDrawable("cursor"),
-                        skin.getDrawable("darkgrey"),
-                        skin.getDrawable("black")
-                )
-        );
-        group.addActor(textField);
-
-        final TextArea textField2 = new TextArea("Default skin",
-                new TextField.TextFieldStyle(
-//                        new BitmapFont(),
-                        skin.getFont("default-font"),
-                        Color.WHITE,
-                        defaultSkin.getDrawable("cursor"),
-                        defaultSkin.getDrawable("selection"),
-                        defaultSkin.getDrawable("textfield")
-                )
-                );
-        group.addActor(textField2);
+        List<String> list = new List<String>(skin);
+        String[] strings = new String[10];
+        for (int i = 0, k = 0; i < 10; i++) {
+            strings[k++] = "String: " + i;
+        }
+        list.setItems(strings);
+        //final ScrollPane scrollPane = new ScrollPane(list);
+        group.addActor(list);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
