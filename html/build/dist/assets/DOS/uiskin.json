@@ -102,10 +102,16 @@
       knob: slider-knob-vertical,
     },
   },
+  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+    default: {
+      font: default-font,
+      fontColor: white,
+    },
+  },
   com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
     default: {
       selection: darkgrey,
-      background: textarea,
+      background: black,
       font: default-font,
       fontColor: white,
       cursor: cursor,
@@ -119,10 +125,19 @@
       fontColor: black,
     },
   },
-  com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+  com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
     default: {
+      background: black
+      fontColorUnselected: white,
+      selection: darkgrey,
+      fontColorSelected: white,
       font: default-font,
-      fontColor: white,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.Touchpad$TouchpadStyle: {
+    default: {
+      background: black,
+      knob: slider-knob,
     },
   },
 }
