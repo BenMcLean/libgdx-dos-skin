@@ -134,4 +134,10 @@
       font: default-font,
     },
   },
+  com.badlogic.gdx.scenes.scene2d.ui.Touchpad$TouchpadStyle: {
+    default: {
+      background: black,
+      knob: slider-knob,
+    },
+  },
 }

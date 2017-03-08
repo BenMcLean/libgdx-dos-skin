@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -12,8 +13,8 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class LibGDXDOSGame extends ApplicationAdapter {
-    public static final int VIRTUAL_WIDTH = 640;
-    public static final int VIRTUAL_HEIGHT = 480;
+    public static final int VIRTUAL_WIDTH = 1280;
+    public static final int VIRTUAL_HEIGHT = 720;
 
     private Skin skin;
     private Skin defaultSkin;
@@ -37,23 +38,50 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
 
-        group.addActor(new Label("Label", skin));
 
-        final SelectBox<String> selectBox = new SelectBox<String>(skin);
-        selectBox.setItems("Stuff", "Things", "Nouns");
-        group.addActor(selectBox);
+        // SCROLL PANE CODE BEGINS HERE
 
-        final TextButton shaderButton = new TextButton("TextButton", skin, "default");
-        group.addActor(shaderButton);
+        Table container = new Table();
+        stage.addActor(container);
+        container.setFillParent(true);
 
-        List<String> list = new List<String>(skin);
-        String[] strings = new String[10];
-        for (int i = 0, k = 0; i < 10; i++) {
-            strings[k++] = "String: " + i;
+        Table table = new Table();
+
+        final ScrollPane scroll = new ScrollPane(table, skin);
+
+        scroll.setForceScroll(true, true);
+
+        InputListener stopTouchDown = new InputListener() {
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                event.stop();
+                return false;
+            }
+        };
+
+        table.pad(10).defaults().expandX().space(4);
+        for (int i = 0; i < 10; i++) {
+            table.row();
+            table.add(new Label(i + "uno", skin)).expandX().fillX();
+
+            TextButton button = new TextButton(i + "dos", skin);
+            table.add(button);
+            button.addListener(new ClickListener() {
+                public void clicked (InputEvent event, float x, float y) {
+                    System.out.println("click " + x + ", " + y);
+                }
+            });
+
+            Slider slider = new Slider(0, 100, 1, false, skin);
+            slider.addListener(stopTouchDown); // Stops touchDown events from propagating to the FlickScrollPane.
+            table.add(slider);
+
+            table.add(new Label(i + "tres long0 long1 long2 long3 long4 long5 long6 long7 long8 long9 long10 long11 long12", skin));
         }
-        list.setItems(strings);
-        //final ScrollPane scrollPane = new ScrollPane(list);
-        group.addActor(list);
+
+        scroll.setSize(100, 16);
+        scroll.setOverscroll(false, false);
+        scroll.invalidate();
+        group.addActor(scroll);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
