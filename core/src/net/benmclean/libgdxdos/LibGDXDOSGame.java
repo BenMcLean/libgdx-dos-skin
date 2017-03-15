@@ -13,8 +13,8 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class LibGDXDOSGame extends ApplicationAdapter {
-    public static final int VIRTUAL_WIDTH = 1280;
-    public static final int VIRTUAL_HEIGHT = 720;
+    public static final int VIRTUAL_WIDTH = 640;
+    public static final int VIRTUAL_HEIGHT = 480;
 
     private Skin skin;
     private Skin defaultSkin;
