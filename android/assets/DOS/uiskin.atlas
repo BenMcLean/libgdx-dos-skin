@@ -6,7 +6,7 @@ filter: Nearest,Nearest
 repeat: none
 black
   rotate: false
-  xy: 72, 22
+  xy: 0, 1
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -14,7 +14,7 @@ black
   index: -1
 button
   rotate: false
-  xy: 73, 9
+  xy: 80, 82
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 0, 8, 0, 7
@@ -23,7 +23,7 @@ button
   index: -1
 button-pressed
   rotate: false
-  xy: 73, 32
+  xy: 80, 105
   size: 24, 23
   split: 8, 8, 7, 7
   pad: 8, 0, 7, 0
@@ -32,7 +32,7 @@ button-pressed
   index: -1
 checked
   rotate: false
-  xy: 0, 0
+  xy: 0, 2
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -41,7 +41,7 @@ checked
   index: -1
 combo-box
   rotate: false
-  xy: 64, 23
+  xy: 112, 80
   size: 9, 48
   split: 0, 8, 16, 16
   pad: 0, 8, 0, 0
@@ -50,7 +50,7 @@ combo-box
   index: -1
 cursor
   rotate: false
-  xy: 120, 110
+  xy: 104, 112
   size: 8, 16
   split: 0, 0, 0, 0
   pad: 0, 0, 0, 0
@@ -59,7 +59,7 @@ cursor
   index: -1
 darkgrey
   rotate: false
-  xy: 72, 21
+  xy: 0, 0
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -67,7 +67,7 @@ darkgrey
   index: -1
 lightgrey
   rotate: false
-  xy: 72, 20
+  xy: 1, 1
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -75,7 +75,7 @@ lightgrey
   index: -1
 scroll-horizontal
   rotate: false
-  xy: 32, 0
+  xy: 64, 2
   size: 24, 16
   split: 8, 8, 0, 16
   pad: 8, 8, -1, -1
@@ -84,25 +84,25 @@ scroll-horizontal
   index: -1
 scroll-knob-horizontal
   rotate: false
-  xy: 120, 94
-  size: 8, 16
-  split: 0, 0, 0, 16
+  xy: 88, 2
+  size: 24, 16
+  split: 8, 8, 0, 16
   pad: 0, 0, 0, 0
-  orig: 8, 16
+  orig: 24, 16
   offset: 0, 0
   index: -1
 scroll-knob-vertical
   rotate: false
-  xy: 120, 94
-  size: 8, 16
-  split: 0, 8, 0, 0
+  xy: 112, 32
+  size: 8, 48
+  split: 0, 8, 16, 16
   pad: 0, 0, 0, 0
-  orig: 8, 16
+  orig: 8, 48
   offset: 0, 0
   index: -1
 scroll-vertical
   rotate: false
-  xy: 112, 78
+  xy: 120, 32
   size: 8, 48
   split: 0, 8, 16, 16
   pad: -1, -1, 16, 16
@@ -111,7 +111,7 @@ scroll-vertical
   index: -1
 select-box
   rotate: false
-  xy: 97, 39
+  xy: 112, 0
   size: 16, 16
   split: 0, 8, 15, 0
   pad: 0, 8, 0, 0
@@ -120,7 +120,7 @@ select-box
   index: -1
 select-box-up
   rotate: false
-  xy: 112, 62
+  xy: 112, 16
   size: 16, 16
   split: 0, 8, 15, 0
   pad: 0, 8, 0, 0
@@ -129,7 +129,7 @@ select-box-up
   index: -1
 slider
   rotate: false
-  xy: 97, 23
+  xy: 104, 64
   size: 8, 16
   split: 0, 0, 0, 16
   pad: 0, 0, 0, 0
@@ -138,7 +138,7 @@ slider
   index: -1
 slider-knob
   rotate: false
-  xy: 56, 0
+  xy: 104, 80
   size: 8, 16
   split: 0, 0, 0, 0
   pad: 0, 0, 0, 0
@@ -147,7 +147,7 @@ slider-knob
   index: -1
 slider-knob-vertical
   rotate: false
-  xy: 120, 78
+  xy: 104, 96
   size: 8, 16
   split: 0, 0, 0, 0
   pad: 0, 0, 0, 0
@@ -156,7 +156,7 @@ slider-knob-vertical
   index: -1
 slider-vertical
   rotate: false
-  xy: 64, 7
+  xy: 96, 66
   size: 8, 16
   split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
@@ -165,7 +165,7 @@ slider-vertical
   index: -1
 splitpane-horizontal
   rotate: false
-  xy: 105, 23
+  xy: 96, 50
   size: 8, 16
   split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
@@ -174,7 +174,7 @@ splitpane-horizontal
   index: -1
 splitpane-vertical
   rotate: false
-  xy: 97, 7
+  xy: 104, 48
   size: 8, 16
   split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
@@ -183,7 +183,7 @@ splitpane-vertical
   index: -1
 unchecked
   rotate: false
-  xy: 73, 55
+  xy: 32, 2
   size: 32, 16
   split: 24, 0, 15, 0
   pad: 24, 0, 0, 0
@@ -192,7 +192,7 @@ unchecked
   index: -1
 white
   rotate: false
-  xy: 72, 19
+  xy: 1, 0
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
@@ -200,7 +200,7 @@ white
   index: -1
 window-double-border
   rotate: false
-  xy: 0, 16
+  xy: 0, 18
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -208,7 +208,7 @@ window-double-border
   index: -1
 window-fancy-border
   rotate: false
-  xy: 48, 71
+  xy: 32, 18
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -216,7 +216,7 @@ window-fancy-border
   index: -1
 window-no-border
   rotate: false
-  xy: 32, 16
+  xy: 48, 73
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -224,7 +224,7 @@ window-no-border
   index: -1
 window-single-border
   rotate: false
-  xy: 80, 71
+  xy: 64, 18
   size: 32, 55
   split: 8, 16, 16, 23
   orig: 32, 55
@@ -232,7 +232,7 @@ window-single-border
   index: -1
 window-thick-border
   rotate: false
-  xy: 0, 71
+  xy: 0, 73
   size: 48, 55
   split: 8, 16, 7, 16
   pad: 16, 24, 16, 23
