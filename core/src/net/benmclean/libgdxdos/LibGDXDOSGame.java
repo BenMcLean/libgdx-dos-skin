@@ -47,10 +47,6 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         Table table = new Table();
 
-        final ScrollPane scroll = new ScrollPane(table, skin);
-
-        scroll.setForceScroll(true, true);
-
         InputListener stopTouchDown = new InputListener() {
             public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
                 event.stop();
@@ -78,10 +74,18 @@ public class LibGDXDOSGame extends ApplicationAdapter {
             table.add(new Label(i + "tres long0 long1 long2 long3 long4 long5 long6 long7 long8 long9 long10 long11 long12", skin));
         }
 
-        scroll.setSize(100, 16);
+        final ScrollPane scroll = new ScrollPane(table, skin);
+
+        scroll.setForceScroll(true, true);
         scroll.setOverscroll(false, false);
+        scroll.setTransform(true);
         scroll.invalidate();
-        group.addActor(scroll);
+
+        Table table2 = new Table();
+        table2.add(scroll).size(320, 128);
+        table2.invalidate();
+
+        group.addActor(table2);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
