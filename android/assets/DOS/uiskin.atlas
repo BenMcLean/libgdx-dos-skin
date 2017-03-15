@@ -78,7 +78,7 @@ scroll-horizontal
   xy: 64, 2
   size: 24, 16
   split: 8, 8, 0, 16
-  pad: 8, 8, -1, -1
+  pad: 8, 8, 0, 0
   orig: 24, 16
   offset: 0, 0
   index: -1
@@ -105,7 +105,7 @@ scroll-vertical
   xy: 120, 32
   size: 8, 48
   split: 0, 8, 16, 16
-  pad: -1, -1, 16, 16
+  pad: 0, 0, 16, 16
   orig: 8, 48
   offset: 0, 0
   index: -1
