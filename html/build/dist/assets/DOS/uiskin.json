@@ -140,4 +140,11 @@
       knob: slider-knob,
     },
   },
+  com.badlogic.gdx.scenes.scene2d.ui.Tree$TreeStyle: {
+    default: {
+      minus: tree-minus,
+      plus: tree-plus,
+      selection: black,
+    },
+  },
 }
