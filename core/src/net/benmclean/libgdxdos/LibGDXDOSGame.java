@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Tree;
+import com.badlogic.gdx.scenes.scene2d.ui.Tree.Node;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -86,6 +88,32 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         table2.invalidate();
 
         group.addActor(table2);
+
+
+        // TREE CODE STARTS HERE
+
+        final Tree tree = new Tree(defaultSkin);
+
+        final Node moo1 = new Node(new TextButton("moo1", skin));
+        final Node moo2 = new Node(new TextButton("moo2", skin));
+        final Node moo3 = new Node(new TextButton("moo3", skin));
+        final Node moo4 = new Node(new TextButton("moo4", skin));
+        final Node moo5 = new Node(new TextButton("moo5", skin));
+        tree.add(moo1);
+        tree.add(moo2);
+        moo2.add(moo3);
+        moo3.add(moo4);
+        tree.add(moo5);
+
+        moo5.getActor().addListener(new ClickListener() {
+            public void clicked (InputEvent event, float x, float y) {
+                tree.remove(moo4);
+            }
+        });
+
+        group.addActor(tree);
+
+        // TREE CODE ENDS HERE
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
