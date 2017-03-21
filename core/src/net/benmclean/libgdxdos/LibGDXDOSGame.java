@@ -92,7 +92,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         // TREE CODE STARTS HERE
 
-        final Tree tree = new Tree(defaultSkin);
+        final Tree tree = new Tree(skin);
 
         final Node moo1 = new Node(new TextButton("moo1", skin));
         final Node moo2 = new Node(new TextButton("moo2", skin));
