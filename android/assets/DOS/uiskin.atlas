@@ -167,7 +167,7 @@ splitpane-horizontal
   rotate: false
   xy: 96, 50
   size: 8, 16
-  split: 0, 0, 0, 16
+  split: 0, 8, 0, 0
   pad: 0, 0, 0, 0
   orig: 8, 16
   offset: 0, 0
@@ -176,7 +176,7 @@ splitpane-vertical
   rotate: false
   xy: 104, 48
   size: 8, 16
-  split: 0, 8, 0, 0
+  split: 0, 0, 0, 16
   pad: 0, 0, 0, 0
   orig: 8, 16
   offset: 0, 0

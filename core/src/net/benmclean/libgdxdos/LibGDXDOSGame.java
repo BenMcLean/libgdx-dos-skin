@@ -5,11 +5,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.ui.Tree;
-import com.badlogic.gdx.scenes.scene2d.ui.Tree.Node;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -40,80 +37,25 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
 
+        String[] listEntries = {"potato1", "potato2", "potato3", "potato4",
+                "potato5", "potato6", "potato7", "potato8"};
 
-        // SCROLL PANE CODE BEGINS HERE
+        List<String> list = new List<String>(skin);
+        list.setItems(listEntries);
 
-        Table container = new Table();
-        stage.addActor(container);
-        container.setFillParent(true);
+        List<String> list2 = new List<String>(skin);
+        list2.setItems(listEntries);
 
-        Table table = new Table();
+        ScrollPane scrollPane = new ScrollPane(list, skin);
+        ScrollPane scrollPane2 = new ScrollPane(list2, skin);
 
-        InputListener stopTouchDown = new InputListener() {
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
-                event.stop();
-                return false;
-            }
-        };
+        scrollPane2.setFlickScroll(false);
 
-        table.pad(10).defaults().expandX().space(4);
-        for (int i = 0; i < 10; i++) {
-            table.row();
-            table.add(new Label(i + "uno", skin)).expandX().fillX();
+        SplitPane splitPane = new SplitPane(scrollPane, scrollPane2, true, skin);
 
-            TextButton button = new TextButton(i + "dos", skin);
-            table.add(button);
-            button.addListener(new ClickListener() {
-                public void clicked (InputEvent event, float x, float y) {
-                    System.out.println("click " + x + ", " + y);
-                }
-            });
-
-            Slider slider = new Slider(0, 100, 1, false, skin);
-            slider.addListener(stopTouchDown); // Stops touchDown events from propagating to the FlickScrollPane.
-            table.add(slider);
-
-            table.add(new Label(i + "tres long0 long1 long2 long3 long4 long5 long6 long7 long8 long9 long10 long11 long12", skin));
-        }
-
-        final ScrollPane scroll = new ScrollPane(table, skin);
-
-        scroll.setForceScroll(true, true);
-        scroll.setOverscroll(false, false);
-        scroll.setTransform(true);
-        scroll.invalidate();
-
-        Table table2 = new Table();
-        table2.add(scroll).size(320, 128);
-        table2.invalidate();
-
-        group.addActor(table2);
+        group.addActor(splitPane);
 
 
-        // TREE CODE STARTS HERE
-
-        final Tree tree = new Tree(skin);
-
-        final Node moo1 = new Node(new TextButton("moo1", skin));
-        final Node moo2 = new Node(new TextButton("moo2", skin));
-        final Node moo3 = new Node(new TextButton("moo3", skin));
-        final Node moo4 = new Node(new TextButton("moo4", skin));
-        final Node moo5 = new Node(new TextButton("moo5", skin));
-        tree.add(moo1);
-        tree.add(moo2);
-        moo2.add(moo3);
-        moo3.add(moo4);
-        tree.add(moo5);
-
-        moo5.getActor().addListener(new ClickListener() {
-            public void clicked (InputEvent event, float x, float y) {
-                tree.remove(moo4);
-            }
-        });
-
-        group.addActor(tree);
-
-        // TREE CODE ENDS HERE
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);
