@@ -37,24 +37,10 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
 
-        String[] listEntries = {"potato1", "potato2", "potato3", "potato4",
-                "potato5", "potato6", "potato7", "potato8"};
 
-        List<String> list = new List<String>(skin);
-        list.setItems(listEntries);
-
-        List<String> list2 = new List<String>(skin);
-        list2.setItems(listEntries);
-
-        ScrollPane scrollPane = new ScrollPane(list, skin);
-        ScrollPane scrollPane2 = new ScrollPane(list2, skin);
-
-        scrollPane2.setFlickScroll(false);
-
-        SplitPane splitPane = new SplitPane(scrollPane, scrollPane2, true, skin);
-
-        group.addActor(splitPane);
-
+        final TextButton button = new TextButton("Whatever!", skin);
+        button.addListener(new TextTooltip("This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip!", skin));
+        group.addActor(button);
 
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);

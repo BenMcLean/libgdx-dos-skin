@@ -128,7 +128,7 @@
   com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
     default: {
       background: black
-      fontColorUnselected: white,
+      fontColorUnselected: lightgrey,
       selection: darkgrey,
       fontColorSelected: white,
       font: default-font,
@@ -145,6 +145,16 @@
       minus: tree-minus,
       plus: tree-plus,
       selection: black,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+    default: {
+      label: {
+        font: default-font,
+        fontColor: black,
+      },
+      background: lightgrey,
+      wrapWidth: 150,
     },
   },
 }
