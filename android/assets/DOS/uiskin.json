@@ -81,6 +81,11 @@
       background: window-thick-border,
       titleFontColor: white,
     },
+    dialog: {
+      titleFont: default-font,
+      background: window-double-border,
+      titleFontColor: white,
+    }
   },
   com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
     default-horizontal: {
@@ -153,7 +158,7 @@
         font: default-font,
         fontColor: black,
       },
-      background: lightgrey,
+      background: window-single-border,
       wrapWidth: 150,
     },
   },
