@@ -8,7 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class LibGDXDOSGame extends ApplicationAdapter {
@@ -25,8 +24,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
     @Override
     public void create() {
-        shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
-        if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
+        shader = Palette4.makeShader();
         uiPalette = Palette4.blueUI();
 
         skin = new Skin(Gdx.files.internal("DOS/uiskin.json"));
@@ -36,7 +34,6 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
-
 
         final TextButton button = new TextButton("Whatever!", skin);
         button.addListener(new TextTooltip("This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip!", skin));

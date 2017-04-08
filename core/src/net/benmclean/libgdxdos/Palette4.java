@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.Disposable;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 
 /**
  * Created by Benjamin on 12/26/2016.
@@ -261,5 +262,19 @@ public class Palette4 implements Disposable {
         shader.setUniformi("u_texPalette", unit);
         Gdx.gl20.glActiveTexture(GL20.GL_TEXTURE0); // reset to texture 0 for SpriteBatch
         return palette4;
+    }
+
+    public static ShaderProgram makeShader () {
+        return makeShader(Palette4.vertexShader);
+    }
+
+    public static ShaderProgram makeShader (String vertex) {
+        return makeShader(vertex, Palette4.fragmentShaderYieldTransparency);
+    }
+
+    public static ShaderProgram makeShader (String vertex, String fragment) {
+        ShaderProgram shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
+        if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
+        return shader;
     }
 }
