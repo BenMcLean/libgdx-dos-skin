@@ -3,6 +3,7 @@ package net.benmclean.libgdxdos;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -22,6 +23,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
     private boolean applyShader = false;
     private boolean shaderChanged = true;
 
+    Texture recolored;
+
     @Override
     public void create() {
         shader = Palette4.makeShader();
@@ -32,6 +35,10 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
 
+        Texture texture = new Texture(Gdx.files.internal("DOS/uiskin.png"));
+
+        recolored = RecoloredAtlas.recolor(texture, uiPalette);
+
         final VerticalGroup group = new VerticalGroup();
         group.space(16);
 
@@ -39,6 +46,8 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         button.addListener(new TextTooltip("This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip!", skin));
         group.addActor(button);
 
+        final Image image = new Image(recolored);
+        group.addActor(image);
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);

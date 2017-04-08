@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.glutils.FrameBuffer;
  * Created by Benjamin on 4/7/2017.
  */
 public class RecoloredAtlas {
-    public Texture recolor (Texture texture, Palette4 palette) {
+    public static Texture recolor (Texture texture, Palette4 palette) {
         FrameBuffer frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, texture.getWidth(), texture.getHeight(), false, false);
         SpriteBatch batch = new SpriteBatch();
 
