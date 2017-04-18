@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -46,8 +47,58 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         button.addListener(new TextTooltip("This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip! This is a tooltip!", skin));
         group.addActor(button);
 
-        final Image image = new Image(recolored);
-        group.addActor(image);
+//        final Image image = new Image(recolored);
+//        group.addActor(image);
+
+        // SCROLL PANE CODE BEGINS HERE
+
+        Table container = new Table();
+        stage.addActor(container);
+        container.setFillParent(true);
+
+        Table table = new Table();
+
+        InputListener stopTouchDown = new InputListener() {
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                event.stop();
+                return false;
+            }
+        };
+
+        table.pad(10).defaults().expandX().space(4);
+        for (int i = 0; i < 10; i++) {
+            table.row();
+            table.add(new Label(i + "uno", skin)).expandX().fillX();
+
+            TextButton abutton = new TextButton(i + "dos", skin);
+            table.add(abutton);
+            abutton.addListener(new ClickListener() {
+                public void clicked (InputEvent event, float x, float y) {
+                    System.out.println("click " + x + ", " + y);
+                }
+            });
+
+            Slider slider = new Slider(0, 100, 1, false, skin);
+            slider.addListener(stopTouchDown); // Stops touchDown events from propagating to the FlickScrollPane.
+            table.add(slider);
+
+            table.add(new Label(i + "tres long0 long1 long2 long3 long4 long5 long6 long7 long8 long9 long10 long11 long12", skin));
+        }
+
+        final ScrollPane scroll = new ScrollPane(table, skin);
+
+        scroll.setForceScroll(true, true);
+        scroll.setOverscroll(false, false);
+        scroll.setTransform(true);
+        scroll.invalidate();
+
+        Table table2 = new Table();
+        table2.add(scroll).size(320, 128);
+        table2.invalidate();
+
+        group.addActor(table2);
+
+        // SCROLL PANE CODE ENDS HERE
 
         final CheckBox checkBox = new CheckBox("Apply Shader", skin);
         checkBox.setChecked(applyShader);

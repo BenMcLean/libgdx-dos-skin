@@ -44,7 +44,7 @@
   },
   com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
     default: {
-      background: lightgrey,
+      background: scrollpane,
       vScroll: scroll-vertical,
       vScrollKnob: scroll-knob-vertical,
       hScroll: scroll-horizontal,
