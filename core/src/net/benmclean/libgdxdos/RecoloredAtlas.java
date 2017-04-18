@@ -23,7 +23,7 @@ public class RecoloredAtlas {
         batch.enableBlending();
 
         frameBuffer.begin();
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(0, 0, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 //        batch.setShader(Palette4.makeShader());
         batch.setProjectionMatrix(viewport.getCamera().combined);
@@ -33,10 +33,11 @@ public class RecoloredAtlas {
         batch.draw(texture, 0, 0);
         batch.end();
         frameBuffer.end();
-        Texture answer = frameBuffer.getColorBufferTexture();
+
+        Texture answer = new Texture(frameBuffer.getColorBufferTexture().getTextureData().consumePixmap());
         answer.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-        batch.dispose();
-        frameBuffer.dispose();
+//        batch.dispose();
+//        frameBuffer.dispose();
         return answer;
     }
 }
