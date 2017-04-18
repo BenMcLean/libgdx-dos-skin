@@ -1,5 +1,7 @@
 package net.benmclean.libgdxdos;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -21,7 +23,9 @@ public class RecoloredAtlas {
         batch.enableBlending();
 
         frameBuffer.begin();
-        batch.setShader(Palette4.makeShader());
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+//        batch.setShader(Palette4.makeShader());
         batch.setProjectionMatrix(viewport.getCamera().combined);
         batch.begin();
         viewport.apply();
