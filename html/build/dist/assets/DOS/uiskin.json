@@ -44,7 +44,7 @@
   },
   com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
     default: {
-      background: lightgrey,
+      background: scrollpane,
       vScroll: scroll-vertical,
       vScrollKnob: scroll-knob-vertical,
       hScroll: scroll-horizontal,
@@ -81,6 +81,11 @@
       background: window-thick-border,
       titleFontColor: white,
     },
+    dialog: {
+      titleFont: default-font,
+      background: window-double-border,
+      titleFontColor: white,
+    }
   },
   com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
     default-horizontal: {
@@ -128,7 +133,7 @@
   com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle: {
     default: {
       background: black
-      fontColorUnselected: white,
+      fontColorUnselected: lightgrey,
       selection: darkgrey,
       fontColorSelected: white,
       font: default-font,
@@ -145,6 +150,16 @@
       minus: tree-minus,
       plus: tree-plus,
       selection: black,
+    },
+  },
+  com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+    default: {
+      label: {
+        font: default-font,
+        fontColor: black,
+      },
+      background: window-single-border,
+      wrapWidth: 150,
     },
   },
 }
