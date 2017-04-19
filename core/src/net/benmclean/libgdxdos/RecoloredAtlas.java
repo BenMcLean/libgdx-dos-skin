@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
+import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -32,12 +33,15 @@ public class RecoloredAtlas {
         //palette.bind(batch.getShader());
         batch.draw(texture, 0, 0);
         batch.end();
+//        Texture answer = ScreenUtils.getFrameBufferTexture().getTexture();
+
+        Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
+        Texture answer = new Texture(pixmap);
         frameBuffer.end();
 
-        Texture answer = new Texture(frameBuffer.getColorBufferTexture().getTextureData().consumePixmap());
         answer.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-//        batch.dispose();
-//        frameBuffer.dispose();
+        batch.dispose();
+        frameBuffer.dispose();
         return answer;
     }
 }
