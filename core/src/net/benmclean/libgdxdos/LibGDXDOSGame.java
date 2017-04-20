@@ -37,7 +37,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
 
         Texture texture = new Texture(Gdx.files.internal("DOS/uiskin.png"));
 
-        recolored = RecoloredAtlas.recolor(texture, uiPalette);
+        recolored = new Texture(RecoloredAtlas.recolor(texture, uiPalette));
 
         final VerticalGroup group = new VerticalGroup();
         group.space(16);

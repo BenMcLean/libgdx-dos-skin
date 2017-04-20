@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
  * Created by Benjamin on 4/7/2017.
  */
 public class RecoloredAtlas {
-    public static Texture recolor(Texture texture, Palette4 palette) {
+    public static Pixmap recolor(Texture texture, Palette4 palette) {
         final int width = texture.getWidth(), height = texture.getHeight();
         FrameBuffer frameBuffer = new FrameBuffer(Pixmap.Format.RGBA8888, width, height, false, false);
         SpriteBatch batch = new SpriteBatch();
@@ -32,10 +32,8 @@ public class RecoloredAtlas {
         palette.bind(batch.getShader());
         batch.draw(texture, 0, 0);
         batch.end();
-        Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
-        Texture answer = new Texture(pixmap);
+        Pixmap answer = ScreenUtils.getFrameBufferPixmap(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
         frameBuffer.end();
-        answer.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         batch.dispose();
         frameBuffer.dispose();
         return answer;
