@@ -41,7 +41,7 @@ public class Palette4 implements Disposable {
             "uniform sampler2D u_texture;\n" +
             "void main() {\n" +
             "   float color = texture2D(u_texture, v_texCoords).r;\n" + // on separate line for GWT
-            "	gl_FragColor = texture2D(u_texPalette, vec2(v_color.r * color, 0)).rgba;\n" +
+            "	gl_FragColor = texture2D(u_texPalette, vec2(color, 0)).rgba * v_color.rgba;\n" +
             "}";
 
     public static final String fragmentShaderYieldTransparency = "#ifdef GL_ES\n" +
@@ -57,7 +57,7 @@ public class Palette4 implements Disposable {
             "void main() {\n" +
             "   vec2 color = texture2D(u_texture, v_texCoords).ra;" +
             "	gl_FragColor = vec4(\n" +
-            "       texture2D(u_texPalette, vec2(v_color.r * color.r, 0)).rgb, \n" +
+            "       texture2D(u_texPalette, vec2(color.r, 0)).rgb * v_color.rgb, \n" +
             "       color.y * v_color.a\n" +
             "   );\n" +
             "}";
@@ -265,15 +265,15 @@ public class Palette4 implements Disposable {
     }
 
     public static ShaderProgram makeShader () {
-        return makeShader(Palette4.vertexShader);
+        return makeShader(Palette4.fragmentShaderYieldTransparency);
     }
 
-    public static ShaderProgram makeShader (String vertex) {
-        return makeShader(vertex, Palette4.fragmentShaderYieldTransparency);
+    public static ShaderProgram makeShader (String fragment) {
+        return makeShader(Palette4.vertexShader, fragment);
     }
 
     public static ShaderProgram makeShader (String vertex, String fragment) {
-        ShaderProgram shader = new ShaderProgram(Palette4.vertexShader, Palette4.fragmentShaderYieldTransparency);
+        ShaderProgram shader = new ShaderProgram(vertex, fragment);
         if (!shader.isCompiled()) throw new GdxRuntimeException("Couldn't compile shader: " + shader.getLog());
         return shader;
     }
