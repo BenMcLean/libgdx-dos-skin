@@ -26,7 +26,7 @@ public class LibGDXDOSGame extends ApplicationAdapter {
         stage = new Stage(new FitViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT));
         skin = new Skin(
                 Gdx.files.internal("DOS/uiskin.json"),
-                RecoloredAtlas.repackAtlas(
+                AtlasRepacker.repackAtlas(
                         new TextureAtlas(Gdx.files.internal("DOS/uiskin.atlas")),
                         Palette4.blueUI()
                 )

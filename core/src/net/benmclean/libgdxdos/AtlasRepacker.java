@@ -5,17 +5,35 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.PixmapPacker;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.Disposable;
 
-/**
- * Created by Benjamin on 4/7/2017.
- */
-public class RecoloredAtlas {
+public class AtlasRepacker implements Disposable {
     public static final int transparent = Color.rgba8888(0f, 0f, 0f, 0f);
+    protected PixmapPacker packer;
+    protected TextureAtlas atlas;
 
-    public static TextureAtlas repackAtlas(TextureAtlas atlas, Palette4 palette) {
-        PixmapPacker packer = new PixmapPacker(1024, 1024, Pixmap.Format.RGBA8888, 0, false);
-        packIn(atlas, packer, palette);
+    public AtlasRepacker(TextureAtlas atlas) {
+        packer = new PixmapPacker(1024, 1024, Pixmap.Format.RGBA8888, 0, false);
+        this.atlas = atlas;
+    }
+
+    public AtlasRepacker pack(String category) {
+        pack(category, atlas, packer);
+        return this;
+    }
+
+    public AtlasRepacker pack(String category, Palette4 palette) {
+        pack(category, atlas, packer, palette);
+        return this;
+    }
+
+    /**
+     * This method should preserve 9-patch info.
+     */
+    public TextureAtlas generateTextureAtlas() {
         TextureAtlas textureAtlas = packer.generateTextureAtlas(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest, false);
+
+        // Copying 9-patch info from the old atlas into the new atlas
         for (TextureAtlas.AtlasRegion region : textureAtlas.getRegions()) {
             TextureAtlas.AtlasRegion raw = atlas.findRegion(region.name);
             if (raw.pads != null) {
@@ -30,17 +48,36 @@ public class RecoloredAtlas {
         return textureAtlas;
     }
 
-    public static void packIn(TextureAtlas raw, PixmapPacker packer) {
-        packIn("", raw, packer);
+    /**
+     * This method should preserve 9-patch info.
+     */
+    public static TextureAtlas repackAtlas(TextureAtlas atlas, Palette4 palette) {
+        AtlasRepacker repacker = new AtlasRepacker(atlas).pack("", palette);
+        TextureAtlas result = repacker.generateTextureAtlas();
+        repacker.dispose();
+        return result;
     }
 
-    public static void packIn(String category, TextureAtlas raw, PixmapPacker packer) {
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(TextureAtlas raw, PixmapPacker packer) {
+        pack("", raw, packer);
+    }
+
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(String category, TextureAtlas raw, PixmapPacker packer) {
         for (TextureAtlas.AtlasRegion region : raw.getRegions())
             if (region.name.startsWith(category))
-                packIn(region, packer);
+                pack(region, packer);
     }
 
-    public static void packIn(TextureAtlas.AtlasRegion region, PixmapPacker packer) {
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(TextureAtlas.AtlasRegion region, PixmapPacker packer) {
         Texture texture = region.getTexture();
         if (!texture.getTextureData().isPrepared()) texture.getTextureData().prepare();
         Pixmap pixmap = texture.getTextureData().consumePixmap();
@@ -54,17 +91,26 @@ public class RecoloredAtlas {
         texture.dispose();
     }
 
-    public static void packIn(TextureAtlas raw, PixmapPacker packer, Palette4 palette) {
-        packIn("", raw, packer, palette);
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(TextureAtlas raw, PixmapPacker packer, Palette4 palette) {
+        pack("", raw, packer, palette);
     }
 
-    public static void packIn(String category, TextureAtlas raw, PixmapPacker packer, Palette4 palette) {
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(String category, TextureAtlas raw, PixmapPacker packer, Palette4 palette) {
         for (TextureAtlas.AtlasRegion region : raw.getRegions())
             if (region.name.startsWith(category))
-                packIn(region, packer, palette);
+                pack(region, packer, palette);
     }
 
-    public static void packIn(TextureAtlas.AtlasRegion region, PixmapPacker packer, Palette4 palette) {
+    /**
+     * This method does not copy 9-Patch info by itself!
+     */
+    public static void pack(TextureAtlas.AtlasRegion region, PixmapPacker packer, Palette4 palette) {
         Texture texture = region.getTexture();
         if (!texture.getTextureData().isPrepared()) texture.getTextureData().prepare();
         Pixmap pixmap = texture.getTextureData().consumePixmap();
@@ -80,5 +126,13 @@ public class RecoloredAtlas {
             }
         packer.pack(region.toString(), result);
         texture.dispose();
+    }
+
+    /**
+     * Does not dispose atlas!
+     */
+    @Override
+    public void dispose() {
+        packer.dispose();
     }
 }
